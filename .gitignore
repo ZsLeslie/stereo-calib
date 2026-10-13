@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+frames/
+images/
+intrinsic_audit_mid02/
+intrinsic_audit_mid54/
+manual_rig_calibration/
+matched/
+matched_stereo_calibration/
+pose_consistency/
+videos/
+
+*.yaml
+*.log
