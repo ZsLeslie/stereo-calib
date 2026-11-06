@@ -5,7 +5,10 @@ frames/
 images/
 intrinsic_audit_mid02/
 intrinsic_audit_mid54/
-manual_rig_calibration/
+manual_rig_calibration/*.yaml
+manual_rig_calibration/*.csv
+manual_rig_calibration/rig_visualization
+manual_rig_calibration/.mplconfig
 matched/
 matched_stereo_calibration/
 pose_consistency/
