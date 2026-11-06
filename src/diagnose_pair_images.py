@@ -1,6 +1,5 @@
 """只读输入图像/内参，诊断结果写入 manual_rig_calibration/image_diagnostics。"""
 import csv
-from pathlib import Path
 import cv2
 import numpy as np
 import calibrate_rig_manual as c

@@ -1,6 +1,6 @@
 """固定原标定的保留图像对，仅令中相机 D=0，比较基线和旋转。
 
-在项目根目录运行：python calibrate_rig_mid_no_distortion.py
+在项目根目录运行：python src/calibrate_rig_mid_no_distortion.py
 结果写入 manual_rig_calibration_mid_no_distortion，不覆盖原结果。
 """
 import csv
@@ -123,7 +123,7 @@ def main():
             report.append(f"| {r['pair']} | {r['num_fixed_pairs']} | {r['old_stereo_rms_px']:.6f} | {r['new_stereo_rms_px']:.6f} | {r['rotation_matrix_difference_deg']:.3f} |")
         report += ['', '这是忽略中相机畸变的对照结果。误差下降不等于已经验证真实基线或真实姿态，需要实际测量或独立数据检验。', '',
                    '输出的外参字段与原结果保持一致，mid 在旧字段中称作 center。使用这些结果投影时须使用中相机 D=0；对应设置及固定图像对编号见 experiment_settings.json。', '',
-                   '复现：在项目根目录运行 `.\\.venv\\Scripts\\python.exe calibrate_rig_mid_no_distortion.py`。']
+                   '复现：在项目根目录运行 `.\\.venv\\Scripts\\python.exe .\\src\\calibrate_rig_mid_no_distortion.py`。']
         (output_dir / 'comparison.md').write_text('\n'.join(report)+'\n', encoding='utf-8')
         for p, digest in hashes.items():
             assert hashlib.sha256(p.read_bytes()).hexdigest() == digest, f'Original changed: {p}'

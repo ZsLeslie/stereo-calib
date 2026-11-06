@@ -1,4 +1,4 @@
-"""运行：python -m unittest -v test_calibrate_rig_manual.py"""
+"""在项目根目录运行：python -m unittest discover -s src -p test_calibrate_rig_manual.py -v"""
 import contextlib
 import io
 import tempfile

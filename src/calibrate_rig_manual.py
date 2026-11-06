@@ -11,23 +11,26 @@ from dataclasses import dataclass
 # 1. 路径
 # ============================================================
 
-FRONT_DIR = Path("./images/front")
-FRONT_MID_DIR = Path("./images/front-mid")
+SRC_DIR = Path(__file__).resolve().parent
+PROJECT_DIR = SRC_DIR.parent
 
-LEFT_DIR = Path("./images/left")
-CENTER_LEFT_DIR = Path("./images/mid-left")
+FRONT_DIR = PROJECT_DIR / "images/front"
+FRONT_MID_DIR = PROJECT_DIR / "images/front-mid"
 
-RIGHT_DIR = Path("./images/right")
-CENTER_RIGHT_DIR = Path("./images/mid-right")
+LEFT_DIR = PROJECT_DIR / "images/left"
+CENTER_LEFT_DIR = PROJECT_DIR / "images/mid-left"
 
-
-FRONT_INTRINSIC = Path("./front_camera_intrinsic.yaml")
-LEFT_INTRINSIC = Path("./left_camera_intrinsic.yaml")
-CENTER_INTRINSIC = Path("./mid_camera_intrinsic.yaml")
-RIGHT_INTRINSIC = Path("./right_camera_intrinsic.yaml")
+RIGHT_DIR = PROJECT_DIR / "images/right"
+CENTER_RIGHT_DIR = PROJECT_DIR / "images/mid-right"
 
 
-OUTPUT_DIR = Path("./manual_rig_calibration")
+FRONT_INTRINSIC = SRC_DIR / "front_camera_intrinsic.yaml"
+LEFT_INTRINSIC = SRC_DIR / "left_camera_intrinsic.yaml"
+CENTER_INTRINSIC = SRC_DIR / "mid_camera_intrinsic.yaml"
+RIGHT_INTRINSIC = SRC_DIR / "right_camera_intrinsic.yaml"
+
+
+OUTPUT_DIR = PROJECT_DIR / "manual_rig_calibration"
 OUTPUT_DIR.mkdir(
     parents=True,
     exist_ok=True
